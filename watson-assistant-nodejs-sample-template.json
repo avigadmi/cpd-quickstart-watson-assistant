@@ -163,6 +163,16 @@
 										"containerPort": 8080
 									}
 								],
+								"env": [
+									{
+										"name": "ASSISTANT_IAM_APIKEY",
+										"value": "${ASSISTANT_IAM_APIKEY}"
+									},
+									{
+										"name": "ASSISTANT_URL",
+										"value": "${ASSISTANT_URL}"
+									}
+								],
 								"livenessProbe": {
 									"httpGet": {
 										"path": "/health",
@@ -216,6 +226,16 @@
 			"name": "NAME",
 			"required": true,
 			"value": "watson-assistant-example"
+		},
+		{
+			"displayName": "Watson Assistant API Key",
+			"name": "ASSISTANT_IAM_APIKEY",
+			"required": true
+		},
+		{
+			"displayName": "Watson Assistant URL",
+			"name": "ASSISTANT_URL",
+			"required": true
 		},
 		{
 			"description": "The OpenShift Namespace where the ImageStream resides.",
