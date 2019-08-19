@@ -51,6 +51,12 @@ The following steps are for running locally with Node.js.
 
 5. Point your browser to [localhost:3000](http://localhost:3000).
 
+
+### Known issues
+
+Please note this app uses the Watson Assistant for IBM Cloud Pak for Data v1 API. If you need more information, you can go to the [Watson Assistant V1 API page](https://cloud.ibm.com/apidocs/assistant-data-v1).  
+The [Watson Assistant for IBM Cloud Pak for Data v2 API](https://cloud.ibm.com/apidocs/assistant-data-v2) doesn't yet support creation of assistants.
+
 ### Testing the app
 
 After your app is installed and running, experiment with it to see how it responds.

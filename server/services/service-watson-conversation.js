@@ -8,7 +8,7 @@ module.exports = function(app, serviceManager) {
 		username: process.env.ASSISTANT_USERNAME,
 		password: process.env.ASSISTANT_PASSWORD,
 		url: process.env.ASSISTANT_URL,
-		version: '2018-09-20',
+		version: '2019-02-28',
 	});
 
 	serviceManager.set('watson-conversation', assistant);
