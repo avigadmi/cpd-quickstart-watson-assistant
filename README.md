@@ -1,31 +1,51 @@
-# Watson Assistant Example Quickstart [![](https://img.shields.io/badge/IBM_Cloud-powered-blue.svg)](https://bluemix.net)
+# Watson Assistant Example Quickstart
 
-This Node.js app demonstrates the [Watson Assistant](https://www.ibm.com/cloud/watson-assistant/) service in a simple interface engaging in a series of simple simulated banking tasks.
+IBM Watson Assistant for IBM Cloud Pak for Data combines machine learning, natural language understanding, and an integrated dialog editor to create conversation flows between your apps and your users.  
+
+This Node.js app demonstrates the Watson Assistant service in a simple interface engaging in a series of simple simulated banking tasks.
 
 ## Getting started
-bla bla bla
+
+### Configuring workspace
+
+The following steps are to optionally retrieve a workspace id and configure it for your application. If you do not configure a workspace id, the first workspace will be used, or a new workspace will be created.
+
+1. Click on your Watson Assistance instance.
+
+1. From the **Manage** page, click **Launch tool**.
+
+1. Click the dots in the upper right hand corner for the workspace you want and click **View details**.
+
+1. Copy the `Workspace ID` and paste this as a quickstart parameter labeled `WORKSPACE_ID`.
+
 
 ### Running locally
 
-The following steps are for running locally with Node.js. You can also run locally with Docker.
+The following steps are for running locally with Node.js.
 
 1. To develop locally, first install [Node.js](https://nodejs.org) ([LTS](https://github.com/nodejs/Release) supported versions).
 
-1. At the command line, go to your project directory.
+2. In the application folder, copy the *.env.example* file and create a file called *.env*
+       
+    ```sh
+    cp .env.example .env
+    ```       
 
-1. Install the dependencies:
+7. Open the *.env* file and add `ASSISTANT_IAM_APIKEY`, `ASSISTANT_URL` and the optionally `WORKSPACE_ID`.
+    
+3. Install the dependencies:
 
     ```sh
     npm install
     ```
 
-1. Start the app:
+4. Start the app:
 
     ```sh
     npm start
     ```
 
-1. Point your browser to [localhost:3000](http://localhost:3000).
+5. Point your browser to [localhost:3000](http://localhost:3000).
 
 ### Testing the app
 
