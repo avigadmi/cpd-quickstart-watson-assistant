@@ -4,7 +4,7 @@
   "description": "An application that demonstrates the Watson Assistant service in a simple chat interface simulating a cognitive car dashboard.",
   "private": true,
   "engines": {
-    "node": ">=8.0"
+    "node": ">=10.0"
   },
   "config": {
     "entrypoint": "server/server.js"

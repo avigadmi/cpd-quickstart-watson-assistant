@@ -8,7 +8,7 @@ const assistant = new AssistantV1({
     version: '2019-02-28',
 });
 
-let workspaceId = null;
+let workspaceId = process.env.WORKSPACE_ID;
 const MAX_RETRIES = 3;
 
 /**
@@ -33,26 +33,25 @@ const createWorkspace = (assistant, retryCount, trainingFile) => {
     });
 };
 
-
-/**
- * Creates a workspace or use an existing one
- */
-assistant.listWorkspaces(function (err, response) {
-    console.log("listing workspaces...");
-    if (err) {
-        console.log(err);
-        return;
-    } else if (response.workspaces.length > 0) {
-        workspaceId = response.workspaces[0].workspace_id;
-        console.log('Using workspace:', workspaceId);
-    } else {
-        console.log('Creating a workspace...');
-        createWorkspace(assistant, MAX_RETRIES, require('../training/bank_simple_workspace.json'));
-    }
-});
-
+if (workspaceId) {
+	console.log('Application configured with workspace id:', workspaceId);
+} else {
+	// Creates a workspace or use an existing one
+	assistant.listWorkspaces(function (err, response) {
+		if (err) {
+			console.log(err);
+			return;
+		} else if (response.workspaces.length > 0) {
+			workspaceId = response.workspaces[0].workspace_id;
+			console.log('Using existing workspace:', workspaceId);
+		} else {
+			console.log('Creating a workspace...');
+			createWorkspace(assistant, MAX_RETRIES, require('../training/bank_simple_workspace.json'));
+		}
+	});
+}
 
 module.exports = {
     getAssistantV1: () => assistant,
     getWorkspaceId: () => workspaceId,
-}
+};

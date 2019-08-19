@@ -77,7 +77,3 @@ The chat interface is on the left, and the JSON that the JavaScript code receive
 ## License
 
   This sample code is licensed under Apache 2.0.
-
-## Open Source @ IBM
-
-  Find more open source projects on the [IBM Github Page](http://ibm.github.io/)

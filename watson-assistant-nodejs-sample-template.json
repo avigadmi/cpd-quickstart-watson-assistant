@@ -170,6 +170,10 @@
 									{
 										"name": "ASSISTANT_URL",
 										"value": "${ASSISTANT_URL}"
+									},
+									{
+										"name": "WORKSPACE_ID",
+										"value": "${WORKSPACE_ID}"
 									}
 								],
 								"livenessProbe": {
@@ -237,6 +241,11 @@
 			"required": true
 		},
 		{
+			"description": "Watson Assistant Workspace ID. If left blank the first existing workspace will be used, or a new workspace will be created",
+			"displayName": "Workspace ID",
+			"name": "WORKSPACE_ID"
+		},
+		{
 			"description": "The OpenShift Namespace where the ImageStream resides.",
 			"displayName": "Namespace",
 			"name": "NAMESPACE",
@@ -244,7 +253,7 @@
 			"value": "openshift"
 		},
 		{
-			"description": "Version of NodeJS image to be used (6, 8, or latest).",
+			"description": "Version of NodeJS image to be used (10 or latest).",
 			"displayName": "Version of NodeJS Image",
 			"name": "NODEJS_VERSION",
 			"required": true,
