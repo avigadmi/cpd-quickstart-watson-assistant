@@ -241,7 +241,7 @@
 			"required": true
 		},
 		{
-			"description": "Watson Assistant Workspace ID. If left blank the first existing workspace will be used, or a new workspace will be created",
+			"description": "Watson Assistant Workspace ID, if left blank the first existing workspace will be used, or a new workspace will be created.",
 			"displayName": "Workspace ID",
 			"name": "WORKSPACE_ID"
 		},
