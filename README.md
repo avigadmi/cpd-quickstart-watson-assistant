@@ -4,6 +4,10 @@ IBM Watson Assistant for IBM Cloud Pak for Data combines machine learning, natur
 
 This Node.js app demonstrates the Watson Assistant service in a simple interface engaging in a series of simple simulated banking tasks.
 
+![Demo](readme_images/demo.gif)
+
+You can view a [demo](http://conversation-simple.ng.bluemix.net/) of this app.
+
 ## Getting started
 
 ### Configuring workspace
