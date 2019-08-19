@@ -9,6 +9,7 @@ module.exports = function(app, serviceManager) {
 		password: process.env.ASSISTANT_PASSWORD,
 		url: process.env.ASSISTANT_URL,
 		version: '2019-02-28',
+		disable_ssl_verification: true // necessary for CPD
 	});
 
 	serviceManager.set('watson-conversation', assistant);

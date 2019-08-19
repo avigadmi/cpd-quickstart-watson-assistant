@@ -6,6 +6,7 @@ const assistant = new AssistantV1({
     password: process.env.ASSISTANT_PASSWORD,
     url: process.env.ASSISTANT_URL,
     version: '2019-02-28',
+	disable_ssl_verification: true // necessary for CPD
 });
 
 let workspaceId = process.env.WORKSPACE_ID;
