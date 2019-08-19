@@ -10,6 +10,15 @@ You can view a [demo](http://conversation-simple.ng.bluemix.net/) of this app.
 
 ## Getting started
 
+### IBM Cloud Pak for Data 
+
+Make your data ready for an AI and multicloud world. Cloud Pak for Data System is an all-in-one cloud-native Data and AI platform in a box, providing a pre-configured, governed, and secure environment to collect, organize and analyze data. [Learn more](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/overview/overview.html).
+
+Installing Cloud Pak for Data - [Installation Instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/ovu.html)
+
+Installing the Watson Assistant add-on [instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/assistant-install.html)
+
+
 ### Configuring workspace
 
 The following steps are to optionally retrieve a workspace id and configure it for your application. If you do not configure a workspace id, the first workspace will be used, or a new workspace will be created.
