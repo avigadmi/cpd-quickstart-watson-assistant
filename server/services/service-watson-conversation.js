@@ -1,4 +1,4 @@
-const AssistantV1 = require('watson-developer-cloud/assistant/v1');
+const AssistantV1 = require('ibm-watson/assistant/v1');
 
 module.exports = function(app, serviceManager) {
 	const iam_url = "https://iam.bluemix.net/identity/token";

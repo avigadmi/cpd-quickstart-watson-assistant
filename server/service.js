@@ -1,4 +1,4 @@
-const AssistantV1 = require('watson-developer-cloud/assistant/v1');
+const AssistantV1 = require('ibm-watson/assistant/v1');
 
 const assistant = new AssistantV1({
     iam_apikey: process.env.ASSISTANT_IAM_APIKEY,
