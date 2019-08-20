@@ -58,6 +58,18 @@ Check the status of your new nodejs app with the command:
 
         $ oc status
         
+        
+Which should return something like:
+
+        In project My Project (my-project) on server https://10.2.2.2:8443
+
+        http://watson-assistant-quickstart-my-project.172.30.108.183.nip.io (svc/watson-assistant-quickstart)
+          dc/watson-assistant-quickstart deploys istag/watson-assistant-quickstart:latest <-
+            bc/watson-assistant-quickstart source builds https://github.com/avigadmi/watson-assistant-quickstart on openshift/nodejs:10
+              build #1 running for 7 seconds
+            deployment #1 waiting on image or update        
+        
+        
 If the build is not yet started (you can check by running `oc get builds`), start one and stream the logs with:
 
         $ oc start-build watson-assistant-quickstart --follow
