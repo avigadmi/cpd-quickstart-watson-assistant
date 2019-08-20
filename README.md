@@ -40,7 +40,7 @@ The following parameters are required:
 1. `ASSISTANT_IAM_APIKEY`
 2. `ASSISTANT_URL`
 
-notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created. [How to find your workspace ID](#how-to-find-your-workspace-id)
+notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created. [How to find existing workspace ID](#how-to-find-existing-workspace-id)
 
 Create the app from the template:
 
