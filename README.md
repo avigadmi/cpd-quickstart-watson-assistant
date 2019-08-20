@@ -107,7 +107,7 @@ Now navigate to the newly created Node.js web app at the hostname we just config
 
 #### Success
 
-You should now have a Node.js welcome page showing the current hit count, as stored in a MongoDB database.
+You should now have a Node.js app demonstrates the Watson Assistant service in a simple interface
 
 #### Pushing updates
 
