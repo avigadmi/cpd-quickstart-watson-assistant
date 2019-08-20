@@ -112,6 +112,7 @@ You should now have a Node.js app demonstrates the Watson Assistant service in a
 #### Pushing updates
 
 Assuming you used the URL of your own forked repository, we can easily push changes and simply repeat the steps above which will trigger the newly built image to be deployed.
+You can also define [Webhook Triggers](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/triggering_builds.html#webhook-triggers) to trigger a new build when a repository is updated.
 
 
 ### How to find existing workspace ID
