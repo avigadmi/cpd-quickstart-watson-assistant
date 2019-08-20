@@ -28,7 +28,7 @@ That's it, project has been created. It would probably be good to set your curre
 
         $ oc project my-project
 
-### Creating the apps from a template
+### Creating the app from a template
 
 Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. Learn more about [OpenShift templates](https://docs.openshift.com/enterprise/3.0/dev_guide/new_app.html#specifying-a-template).
 
