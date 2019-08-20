@@ -114,7 +114,7 @@ You should now have a Node.js app demonstrates the Watson Assistant service in a
 Assuming you used the URL of your own forked repository, we can easily push changes and simply repeat the steps above which will trigger the newly built image to be deployed.
 
 
-### How to find your workspace id
+### How to find existing workspace ID
 
 1. Click on your Watson Assistance instance.
 
