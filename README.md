@@ -60,7 +60,7 @@ Check the status of your new nodejs app with the command:
         
 If the build is not yet started (you can check by running `oc get builds`), start one and stream the logs with:
 
-        $ oc start-build nodejs-ex --follow
+        $ oc start-build watson-assistant-quickstart --follow
         
 #### Deploy the app
 
@@ -71,8 +71,8 @@ Deployment happens automatically once the new application image is available.  T
         
 This will help indicate what IP address the service is running, the default port for it to deploy at is 8080. Output should look like:
 
-        NAME        CLUSTER-IP       EXTERNAL-IP   PORT(S)    SELECTOR                                AGE
-        nodejs-ex   172.30.249.251   <none>        8080/TCP   deploymentconfig=nodejs-ex,name=myapp   17m                
+        NAME                          CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+        watson-assistant-quickstart   172.30.249.251   <none>        8080/TCP   7m                
 
 
 #### Configure routing
@@ -89,7 +89,7 @@ If you're running OpenShift on a local machine, you can preview the new app by s
 
 This could also be accomplished by running:
 
-        $ oc expose svc/nodejs-ex --hostname=www.example.com
+        $ oc expose svc/watson-assistant-quickstart --hostname=www.example.com
 
 Now navigate to the newly created Node.js web app at the hostname we just configured, for our example it was simply [https://10.2.2.2](https://10.2.2.2).
 
