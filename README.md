@@ -114,6 +114,13 @@ You should now have a Node.js app demonstrates the Watson Assistant service in a
 Assuming you used the URL of your own forked repository, we can easily push changes and simply repeat the steps above which will trigger the newly built image to be deployed.
 You can also define [Webhook Triggers](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/triggering_builds.html#webhook-triggers) to trigger a new build when a repository is updated, using the `GITHUB_WEBHOOK_SECRET` or `GENERIC_WEBHOOK_SECRET` template parameters.
 
+### Testing the app
+
+After your app is installed and running, experiment with it to see how it responds.
+
+The chat interface is on the left, and the JSON that the JavaScript code receives from the Watson Assistant service is on the right. Your questions and commands are interpreted using a small set of sample data trained with the banking intents:
+
+* Visit the documentation to learn more about [intents](https://cloud.ibm.com/docs/services/assistant/intents.html#defining-intents) and [entities](https://cloud.ibm.com/docs/services/assistant/entities.html#defining-entities)
 
 ### How to find existing workspace ID
 
@@ -160,13 +167,6 @@ The following steps are for running locally with Node.js.
 Please note this app uses the Watson Assistant for IBM Cloud Pak for Data v1 API. If you need more information, you can go to the [Watson Assistant V1 API page](https://cloud.ibm.com/apidocs/assistant-data-v1).  
 The [Watson Assistant for IBM Cloud Pak for Data v2 API](https://cloud.ibm.com/apidocs/assistant-data-v2) doesn't yet support creation of assistants.
 
-### Testing the app
-
-After your app is installed and running, experiment with it to see how it responds.
-
-The chat interface is on the left, and the JSON that the JavaScript code receives from the Watson Assistant service is on the right. Your questions and commands are interpreted using a small set of sample data trained with the banking intents:
-
-* Visit the documentation to learn more about [intents](https://cloud.ibm.com/docs/services/assistant/intents.html#defining-intents) and [entities](https://cloud.ibm.com/docs/services/assistant/entities.html#defining-entities)
 
 ## License
 
