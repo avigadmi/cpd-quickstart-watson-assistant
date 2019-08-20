@@ -87,18 +87,19 @@ This will help indicate what IP address the service is running, the default port
         watson-assistant-quickstart   172.30.249.251   <none>        8080/TCP   7m                
 
 
-#### Configure routing
+#### Routing
 
 An OpenShift route exposes a service at a host name, like www.example.com, so that external clients can reach it by name.
 
 DNS resolution for a host name is handled separately from routing; you may wish to configure a cloud domain that will always correctly resolve to the OpenShift router, or if using an unrelated host name you may need to modify its DNS records independently to resolve to the router.
 
-That aside, let's explore our new web app using 
+That aside, let's explore our new web app. `oc new-app` created a new route. To view your new route:
 
         $ oc get route
 
-In the result you can find the routes in your project including route name and hostname.  
-Find the `watson-assistant-quickstart` route and navigate to the newly created Node.js web app in the hostname.
+In the result you can find all routes in your project. For each route you can find the hostname.  
+Find the `watson-assistant-quickstart` route and use the hostname to navigate to the newly created Node.js web app.
+Notice that you can use the `APPLICATION_DOMAIN` template parameter to define a hostname for your app.
 
 #### Success
 
