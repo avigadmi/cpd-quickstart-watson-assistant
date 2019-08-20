@@ -1,4 +1,4 @@
-# Watson Assistant Example Quickstart
+# Watson Assistant Quick Start
 
 IBM Watson Assistant for IBM Cloud Pak for Data combines machine learning, natural language understanding, and an integrated dialog editor to create conversation flows between your apps and your users.  
 
@@ -10,13 +10,13 @@ You can view a [demo](http://conversation-simple.ng.bluemix.net/) of this app.
 
 ## Getting started
 
-### Installing Watson Assistant add-on on IBM Cloud Pak for Data 
+### Installing the Watson Assistant add-on on IBM Cloud Pak for Data 
 
 Make your data ready for an AI and multicloud world. Cloud Pak for Data System is an all-in-one cloud-native Data and AI platform in a box, providing a pre-configured, governed, and secure environment to collect, organize and analyze data. [Learn more](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/overview/overview.html).
 
-Installing Cloud Pak for Data - [Installation Instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/ovu.html)
+Install Cloud Pak for Data on OpenShift- [Instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/ovu.html)
 
-Installing the Watson Assistant add-on [instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/assistant-install.html)
+Install the Watson Assistant add-on - [instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/assistant-install.html)
 
 ### Creating a project
 
@@ -24,7 +24,7 @@ After logging in with `oc login`, if you don't have a project setup all ready, g
 
         $ oc new-project my-project --display-name="My Project"
 
-That's it, project has been created.  Though it would probably be good to set your current project to this (thought new-project does it automatically as well), such as:
+That's it, project has been created. It would probably be good to set your current project, such as:
 
         $ oc project my-project
 
