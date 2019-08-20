@@ -63,7 +63,7 @@ Which should return something like:
 
         In project My Project (my-project) on server https://10.2.2.2:8443
 
-        http://watson-assistant-quickstart-my-project.172.30.108.183.nip.io (svc/watson-assistant-quickstart)
+         svc/watson-assistant-quickstart - 172.30.108.183:8080
           dc/watson-assistant-quickstart deploys istag/watson-assistant-quickstart:latest <-
             bc/watson-assistant-quickstart source builds https://github.com/avigadmi/watson-assistant-quickstart on openshift/nodejs:10
               build #1 running for 7 seconds
