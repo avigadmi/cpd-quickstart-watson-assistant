@@ -30,26 +30,24 @@ That's it, project has been created. It would probably be good to set your curre
 
 ### Creating the apps from a template
 
-Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file:
+Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. [Learn more](https://docs.openshift.com/enterprise/3.0/dev_guide/new_app.html#specifying-a-template) about OpenShift templates.
 
-        $ oc new-app -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json
+First, list the parameters that you can override:
 
-add required parameters: 
-X
-Y
-Z
+        $ oc process --parameters -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json
 
-#### Configuring a workspace
+The following parameters are required:
+1. `ASSISTANT_IAM_APIKEY`
+2. `ASSISTANT_URL`
 
-The following steps are to optionally retrieve a workspace id and configure it for your application. If you do not configure a workspace id, the first workspace will be used, or a new workspace will be created.
+notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created.
 
-1. Click on your Watson Assistance instance.
+Create the app from the template:
 
-1. From the **Manage** page, click **Launch tool**.
-
-1. Click the dots in the upper right hand corner for the workspace you want and click **View details**.
-
-1. Copy the `Workspace ID` and paste this as a quickstart parameter labeled `WORKSPACE_ID`.
+        $ oc new-app -f \
+        https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json \
+        -p ASSISTANT_IAM_APIKEY=ca2905e6-7b5d-4408-9192-xxxxxxxx \
+        -p ASSISTANT_URL=https://gateway-syd.watsonplatform.net/assistant/api
 
 
 #### Build the app
@@ -107,6 +105,17 @@ Assuming you used the URL of your own forked repository, we can easily push chan
 ### Web UI
 
 To run this example from the Web UI, you can same steps following done on the CLI as defined above.
+
+#### How to find your workspace id
+
+1. Click on your Watson Assistance instance.
+
+1. From the **Manage** page, click **Launch tool**.
+
+1. Click the dots in the upper right hand corner for the workspace you want and click **View details**.
+
+1. Copy the `Workspace ID` and paste this as a quickstart `WORKSPACE_ID` parameter value.
+
 
 ### Running locally
 
