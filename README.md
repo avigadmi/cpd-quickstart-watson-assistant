@@ -114,10 +114,6 @@ You should now have a Node.js welcome page showing the current hit count, as sto
 Assuming you used the URL of your own forked repository, we can easily push changes and simply repeat the steps above which will trigger the newly built image to be deployed.
 
 
-### Web UI
-
-To run this example from the Web UI, you can same steps following done on the CLI as defined above.
-
 ### How to find your workspace id
 
 1. Click on your Watson Assistance instance.
