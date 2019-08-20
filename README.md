@@ -93,17 +93,12 @@ An OpenShift route exposes a service at a host name, like www.example.com, so th
 
 DNS resolution for a host name is handled separately from routing; you may wish to configure a cloud domain that will always correctly resolve to the OpenShift router, or if using an unrelated host name you may need to modify its DNS records independently to resolve to the router.
 
-That aside, let's explore our new web console, which for our example is running at [https://10.2.2.2:8443](https://10.2.2.2:8443).
+That aside, let's explore our new web app using 
 
-After logging into the web console with your same CLI `oc login` credentials, click on the project we just created, then click `Create route`.
+        $ oc get route
 
-If you're running OpenShift on a local machine, you can preview the new app by setting the Hostname to a localhost like: *10.2.2.2*.
-
-This could also be accomplished by running:
-
-        $ oc expose svc/watson-assistant-quickstart --hostname=www.example.com
-
-Now navigate to the newly created Node.js web app at the hostname we just configured, for our example it was simply [https://10.2.2.2](https://10.2.2.2).
+In the result you can find the routes in your project including route name and hostname.  
+Find the `watson-assistant-quickstart` route and navigate to the newly created Node.js web app in the hostname.
 
 #### Success
 
