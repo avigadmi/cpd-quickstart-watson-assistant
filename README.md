@@ -30,9 +30,9 @@ That's it, project has been created. It would probably be good to set your curre
 
 ### Creating the apps from a template
 
-Create the app from the [watson-assistant-nodejs-sample-template.json](watson-assistant-nodejs-sample-template.json) template by using the -f flag and pointing the tool at a path to the template file:
+Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the -f flag and pointing the tool at a path to the template file:
 
-        $ oc new-app -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-nodejs-sample-template.json
+        $ oc new-app -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json
 
 add required parameters: 
 X
