@@ -30,7 +30,7 @@ That's it, project has been created. It would probably be good to set your curre
 
 ### Creating the apps from a template
 
-Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. [Learn more](https://docs.openshift.com/enterprise/3.0/dev_guide/new_app.html#specifying-a-template) about OpenShift templates.
+Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. Learn more about [OpenShift templates](https://docs.openshift.com/enterprise/3.0/dev_guide/new_app.html#specifying-a-template).
 
 First, list the parameters that you can override:
 
@@ -40,7 +40,7 @@ The following parameters are required:
 1. `ASSISTANT_IAM_APIKEY`
 2. `ASSISTANT_URL`
 
-notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created.
+notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created. [How to find your workspace ID](#how-to-find-your-workspace-id)
 
 Create the app from the template:
 
@@ -106,7 +106,7 @@ Assuming you used the URL of your own forked repository, we can easily push chan
 
 To run this example from the Web UI, you can same steps following done on the CLI as defined above.
 
-#### How to find your workspace id
+### How to find your workspace id
 
 1. Click on your Watson Assistance instance.
 
