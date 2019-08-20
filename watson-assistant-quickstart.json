@@ -271,7 +271,8 @@
       "displayName": "Git Repository URL",
       "name": "SOURCE_REPOSITORY_URL",
       "required": true,
-      "value": "https://github.ibm.com/icp4d-devex-prototype/cpd-quickstart-watson-assistant"
+      "value2": "https://github.ibm.com/icp4d-devex-prototype/cpd-quickstart-watson-assistant",
+      "value": "https://github.com/avigadmi/watson-assistant-quickstart"
     },
     {
       "description": "Set this to a branch name, tag or other ref of your repository if you are not using the default branch.",
