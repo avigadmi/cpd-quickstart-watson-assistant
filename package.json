@@ -1,5 +1,5 @@
 {
-  "name": "assistant-basic-starter",
+  "name": "watson-assistant-quickstart",
   "version": "0.1.0",
   "description": "An application that demonstrates the Watson Assistant service in a simple chat interface simulating a cognitive car dashboard.",
   "private": true,
