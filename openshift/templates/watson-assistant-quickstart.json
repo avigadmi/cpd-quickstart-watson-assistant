@@ -164,8 +164,8 @@
                 ],
                 "env": [
                   {
-                    "name": "ASSISTANT_IAM_APIKEY",
-                    "value": "${ASSISTANT_IAM_APIKEY}"
+                    "name": "ASSISTANT_APIKEY",
+                    "value": "${ASSISTANT_APIKEY}"
                   },
                   {
                     "name": "ASSISTANT_URL",
@@ -232,7 +232,7 @@
     },
     {
       "displayName": "Watson Assistant API Key",
-      "name": "ASSISTANT_IAM_APIKEY",
+      "name": "ASSISTANT_APIKEY",
       "required": true
     },
     {
@@ -271,9 +271,8 @@
       "displayName": "Git Repository URL",
       "name": "SOURCE_REPOSITORY_URL",
       "required": true,
-      "value2": "https://github.ibm.com/icp4d-devex-prototype/cpd-quickstart-watson-assistant",
-      "value": "https://github.com/avigadmi/watson-assistant-quickstart"
-    },
+	  "value": "https://github.com/avigadmi/watson-assistant-quickstart"
+	},
     {
       "description": "Set this to a branch name, tag or other ref of your repository if you are not using the default branch.",
       "displayName": "Git Reference",

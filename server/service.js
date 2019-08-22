@@ -1,12 +1,10 @@
 const AssistantV1 = require('ibm-watson/assistant/v1');
 
 const assistant = new AssistantV1({
-    iam_apikey: process.env.ASSISTANT_IAM_APIKEY,
-    username: process.env.ASSISTANT_USERNAME,
-    password: process.env.ASSISTANT_PASSWORD,
     url: process.env.ASSISTANT_URL,
+    icp4d_access_token: process.env.ASSISTANT_APIKEY,
     version: '2019-02-28',
-	disable_ssl_verification: true // necessary for CPD
+    disable_ssl_verification: true // necessary for CPD
 });
 
 let workspaceId = process.env.WORKSPACE_ID;
@@ -40,10 +38,12 @@ if (workspaceId) {
 	// Creates a workspace or use an existing one
 	assistant.listWorkspaces(function (err, response) {
 		if (err) {
-			console.log(err);
-			return;
-		} else if (response.workspaces.length > 0) {
-			workspaceId = response.workspaces[0].workspace_id;
+            console.log(err);
+            return;
+        }
+        const bankWorkspace = (response.workspaces || []).find((workspace) => workspace.name === "Bank_Simple");
+		if (bankWorkspace) {
+			workspaceId = bankWorkspace.workspace_id;
 			console.log('Using existing workspace:', workspaceId);
 		} else {
 			console.log('Creating a workspace...');

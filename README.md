@@ -18,6 +18,9 @@ Installing Cloud Pak for Data on OpenShift- [Instructions](https://docs-icpdata.
 
 Installing the Watson Assistant add-on - [instructions](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/assistant-install.html)
 
+### Create your own copy of this repo
+Fork a copy of [cpd-quickstart-watson-assistant](https://github.ibm.com/icp4d-devex-prototype/cpd-quickstart-watson-assistant)
+
 ### Creating a project
 
 After logging in with `oc login`, if you don't have a project setup all ready, go ahead and take care of that:
@@ -30,24 +33,25 @@ That's it, project has been created. It would probably be good to set your curre
 
 ### Creating the app from a template
 
-Create the app from the [watson-assistant-quickstart.json](watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. Learn more about [OpenShift templates](https://docs.openshift.com/enterprise/3.0/dev_guide/templates.html#dev-guide-templates).
+Create the app from the [watson-assistant-quickstart.json](openshift/templates/watson-assistant-quickstart.json) template by using the `-f` flag and pointing the tool at a path to the template file. Learn more about [OpenShift templates](https://docs.openshift.com/enterprise/3.0/dev_guide/templates.html#dev-guide-templates).
 
-First, list the parameters that you can override:
+First, list the parameters that you can use:
 
-        $ oc process --parameters -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json
+        $ oc process --parameters -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/openshift/templates/watson-assistant-quickstart.json
 
-The following parameters are required:
-1. `ASSISTANT_IAM_APIKEY`
+The following parameters are required, You can find them by clicking on your Watson Assistance instance:
+1. `ASSISTANT_APIKEY`
 2. `ASSISTANT_URL`
 
-notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank the first existing workspace will be used, or a new workspace will be created. [How to find existing workspace ID](#how-to-find-existing-workspace-id)
+notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank a workspace with the name `Bank_Simple` will be used, or a new workspace will be created. [How to find existing workspace ID](#how-to-find-existing-workspace-id)
 
-Create the app from the template:
+Create the app from the template and specify the source url to be your forked repo:
 
         $ oc new-app -f \
-        https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/watson-assistant-quickstart.json \
-        -p ASSISTANT_IAM_APIKEY=ca2905e6-7b5d-4408-9192-xxxxxxxx \
-        -p ASSISTANT_URL=https://gateway-syd.watsonplatform.net/assistant/api
+        https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/openshift/templates/watson-assistant-quickstart.json \
+        -p ASSISTANT_APIKEY=<your api key> \
+        -p ASSISTANT_URL=<you assistant url> \
+        -p SOURCE_REPOSITORY_URL=<your repository location>
 
 
 #### Build the app
@@ -65,7 +69,7 @@ Which should return something like:
 
          svc/watson-assistant-quickstart - 172.30.108.183:8080
           dc/watson-assistant-quickstart deploys istag/watson-assistant-quickstart:latest <-
-            bc/watson-assistant-quickstart source builds https://github.com/avigadmi/watson-assistant-quickstart on openshift/nodejs:10
+            bc/watson-assistant-quickstart source builds https://github.ibm.com/icp4d-devex-prototype/cpd-quickstart-watson-assistant on openshift/nodejs:10
               build #1 running for 7 seconds
             deployment #1 waiting on image or update        
         
@@ -97,18 +101,32 @@ That aside, let's explore our new web app. `oc new-app` created a new route. To 
 
         $ oc get route
 
-In the result you can find all routes in your project. For each route you can find the hostname.  
+In the result you can find all routes in your project and for each route you can find its hostname.  
 Find the `watson-assistant-quickstart` route and use the hostname to navigate to the newly created Node.js web app.
 Notice that you can use the `APPLICATION_DOMAIN` template parameter to define a hostname for your app.
+
+To create a new route at a host name, like www.example.com:
+
+        $ oc expose svc/watson-assistant-quickstart --hostname=www.example.com
+
 
 #### Success
 
 You should now have a Node.js app demonstrates the Watson Assistant service in a simple interface
 
-#### Pushing updates
+### Adding Webhooks and Making Code Changes
+Assuming you used the URL of your own forked repository, you can configure your github repository to make a webhook call whenever you push your code. Learn more about [Webhook Triggers](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/triggering_builds.html#webhook-triggers).
 
-Assuming you used the URL of your own forked repository, we can easily push changes and simply repeat the steps above which will trigger the newly built image to be deployed.
-You can also define [Webhook Triggers](https://docs.openshift.com/container-platform/3.5/dev_guide/builds/triggering_builds.html#webhook-triggers) to trigger a new build when a repository is updated, using the `GITHUB_WEBHOOK_SECRET` or `GENERIC_WEBHOOK_SECRET` template parameters.
+1. From the Web Console homepage, navigate to your project
+2. Go to Builds
+3. Click the link with your BuildConfig name
+4. Click the Configuration tab
+5. Click the "Copy to clipboard" icon to the right of the "GitHub webhook URL" field
+6. Navigate to your repository on GitHub and click on repository settings > webhooks > Add webhook
+7. Paste your webhook URL provided by OpenShift
+8. Leave the defaults for the remaining fields - That's it!
+9. After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.  
+
 
 ### Testing the app
 
@@ -122,9 +140,9 @@ The chat interface is on the left, and the JSON that the JavaScript code receive
 
 1. Click on your Watson Assistance instance.
 
-1. From the **Manage** page, click **Launch tool**.
+1. Click on **Launch tool** and go to the **Skills** tab.
 
-1. Click the dots in the upper right hand corner for the workspace you want and click **View details**.
+1. Click the dots in the upper right hand corner for the Skill you want and click **View API Details**.
 
 1. Copy the `Workspace ID` and paste this as a quickstart `WORKSPACE_ID` parameter value.
 
@@ -141,7 +159,7 @@ The following steps are for running locally with Node.js.
     cp .env.example .env
     ```       
 
-7. Open the *.env* file and add `ASSISTANT_IAM_APIKEY`, `ASSISTANT_URL` and optionally `WORKSPACE_ID`.
+7. Open the *.env* file and add `ASSISTANT_APIKEY`, `ASSISTANT_URL` and optionally `WORKSPACE_ID`.
     
 3. Install the dependencies:
 
