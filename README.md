@@ -39,7 +39,7 @@ First, list the parameters that you can use:
 
         $ oc process --parameters -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/openshift/templates/watson-assistant-quickstart.json
 
-The following parameters are required, You can find them by clicking on your Watson Assistance instance:
+The following parameters are required, You can find them by clicking on your Watson Assistance instance (For security reasons, don't use this token in production):
 1. `ASSISTANT_APIKEY`
 2. `ASSISTANT_URL`
 
