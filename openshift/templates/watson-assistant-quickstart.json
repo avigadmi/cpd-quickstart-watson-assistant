@@ -164,8 +164,8 @@
                 ],
                 "env": [
                   {
-                    "name": "ASSISTANT_APIKEY",
-                    "value": "${ASSISTANT_APIKEY}"
+                    "name": "ACCESS_TOKEN",
+                    "value": "${ACCESS_TOKEN}"
                   },
                   {
                     "name": "ASSISTANT_URL",
@@ -231,12 +231,14 @@
       "value": "watson-assistant-quickstart"
     },
     {
-      "displayName": "Watson Assistant API Key",
-      "name": "ASSISTANT_APIKEY",
+      "displayName": "Cloud Pak for Data access token",
+      "description": "Cloud Pak for Data access token",
+      "name": "ACCESS_TOKEN",
       "required": true
     },
     {
-      "displayName": "Watson Assistant URL",
+      "displayName": "Watson Assistant instance URL",
+      "description": "Watson Assistant instance URL",
       "name": "ASSISTANT_URL",
       "required": true
     },

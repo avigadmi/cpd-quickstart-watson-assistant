@@ -40,7 +40,7 @@ First, list the parameters that you can use:
         $ oc process --parameters -f https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/openshift/templates/watson-assistant-quickstart.json
 
 The following parameters are required, You can find them by clicking on your Watson Assistance instance (For security reasons, don't use this token in production):
-1. `ASSISTANT_APIKEY`
+1. `ACCESS_TOKEN`
 2. `ASSISTANT_URL`
 
 notice the `WORKSPACE_ID` optional parameter - you can start this app with an existing workspace, if left blank a workspace with the name `Bank_Simple` will be used, or a new workspace will be created. [How to find existing workspace ID](#how-to-find-existing-workspace-id)
@@ -49,7 +49,7 @@ Create the app from the template and specify the source url to be your forked re
 
         $ oc new-app -f \
         https://raw.githubusercontent.com/avigadmi/watson-assistant-example/master/openshift/templates/watson-assistant-quickstart.json \
-        -p ASSISTANT_APIKEY=<your api key> \
+        -p ACCESS_TOKEN=<your access token> \
         -p ASSISTANT_URL=<you assistant url> \
         -p SOURCE_REPOSITORY_URL=<your repository location>
 
@@ -159,7 +159,7 @@ The following steps are for running locally with Node.js.
     cp .env.example .env
     ```       
 
-7. Open the *.env* file and add `ASSISTANT_APIKEY`, `ASSISTANT_URL` and optionally `WORKSPACE_ID`.
+7. Open the *.env* file and add `ACCESS_TOKEN`, `ASSISTANT_URL` and optionally `WORKSPACE_ID`.
     
 3. Install the dependencies:
 
