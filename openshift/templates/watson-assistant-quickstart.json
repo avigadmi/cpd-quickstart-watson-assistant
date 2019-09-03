@@ -232,13 +232,13 @@
     },
     {
       "displayName": "Cloud Pak for Data access token",
-      "description": "Cloud Pak for Data access token",
+      "description": "Cloud Pak for Data access token.",
       "name": "ACCESS_TOKEN",
       "required": true
     },
     {
       "displayName": "Watson Assistant instance URL",
-      "description": "Watson Assistant instance URL",
+      "description": "Watson Assistant instance URL.",
       "name": "ASSISTANT_URL",
       "required": true
     },
