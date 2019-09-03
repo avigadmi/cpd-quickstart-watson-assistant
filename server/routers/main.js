@@ -8,7 +8,7 @@ module.exports = function(app) {
     if (!service.getWorkspaceId()) {
       return res.json({
         output: {
-          text: "The app has not been configured with a workspace id parameter. a workspace with the name 'Bank_Simple' will be used, or a new workspace will be created"
+          text: "The app has not been configured with a workspace id parameter. A workspace with the name 'Bank_Simple' will be used, or a new workspace will be created"
         }
       });
     }
