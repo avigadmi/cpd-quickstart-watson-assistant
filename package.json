@@ -1,7 +1,7 @@
 {
   "name": "watson-assistant-quickstart",
   "version": "0.1.0",
-  "description": "An application that demonstrates the Watson Assistant service in a simple chat interface simulating a cognitive car dashboard.",
+  "description": "An application that demonstrates the Watson Assistant service in a simple chat interface engaging in a series of simple simulated banking tasks",
   "private": true,
   "engines": {
     "node": ">=10.0"
