@@ -181,9 +181,9 @@ Follow the steps below to run the app locally:
 
 ### Known issues
 
-Please note this app uses the Watson Assistant for IBM Cloud Pak for Data v1 API. If you need more information, you can go to the [Watson Assistant V1 API page](https://cloud.ibm.com/apidocs/assistant-data-v1).  
+1. This app uses the Watson Assistant for IBM Cloud Pak for Data v1 API. If you need more information, you can go to the [Watson Assistant V1 API page](https://cloud.ibm.com/apidocs/assistant-data-v1).  
 The [Watson Assistant for IBM Cloud Pak for Data v2 API](https://cloud.ibm.com/apidocs/assistant-data-v2) doesn't yet support creation of assistants.
-
+2. The micro service is currently configured to accept insecure endpoints for Cloud Pak for Data. For production, use secure endpoints only.
 
 ## License
 
