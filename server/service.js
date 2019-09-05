@@ -4,7 +4,7 @@ const assistant = new AssistantV1({
     url: process.env.ASSISTANT_URL,
     icp4d_access_token: process.env.ACCESS_TOKEN,
     version: '2019-02-28',
-    disable_ssl_verification: true // necessary for CPD
+    disable_ssl_verification: true
 });
 
 let workspaceId = process.env.WORKSPACE_ID;
